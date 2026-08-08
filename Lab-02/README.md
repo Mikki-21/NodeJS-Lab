@@ -1,8 +1,8 @@
 # NodeJS-Lab
 
-## Lab 02 – Basic HTTP Server Using Node.js
+Lab 02 – Basic HTTP Server Using Node.js
 
-**Date:** 08 August 2026
+ Date: 08 August 2026
 
 ## Objective
 
@@ -54,7 +54,7 @@ http://localhost:3000
 
 ## Problems Faced
 
-### Task 7 – Environment Variable for Port
+ Task 7 – Environment Variable for Port
 
 **Issue:**  
 While testing the server, I wanted to check whether the port could be changed using an environment variable.
