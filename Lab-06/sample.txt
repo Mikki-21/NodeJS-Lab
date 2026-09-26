@@ -1,0 +1,3 @@
+Node.js provides a built-in file system module.
+The fs module can read and write files.
+Asynchronous operations allow other code to run while waiting for file I/O.

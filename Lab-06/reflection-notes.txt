@@ -1,0 +1,16 @@
+Goal: Write two short reflections explaining what you learned about asynchronous file operations and concurrent access to a file.
+Create or open reflection-notes.txt and write 4–5 sentences for each question.
+
+Here are example answers you can use as a starting point. Rewrite them in your own words to reflect what you observed.
+
+Question 1
+Using what you observed in Tasks 2 and 3, explain why fs.readFile() does not block the rest of your program, while fs.readFileSync() does.
+
+Sample answer:
+The fs.readFile() method reads a file asynchronously, so the program can continue executing other code while the file is being read. Its callback runs after the file content becomes available. This is why the message printed after readFile() appears before the file content in Task 2. In contrast, fs.readFileSync() blocks the main thread until the file has been fully read. Therefore, in Task 3, the file content is printed before the next console message.
+
+Question 2
+In the Notes App, what could go wrong if two people ran add-note.js at the exact same moment, both appending to the same notes.txt file?
+
+Sample answer:
+If two people run add-note.js at the same time, both programs may try to write to notes.txt simultaneously. Depending on the filesystem and how the writes are handled, the notes could potentially be interleaved or written in an unexpected order. In some situations, one note might not be saved correctly. This is a concurrency issue because multiple processes are accessing the same file at once. A safer approach for a larger application would be to use a database or a mechanism that coordinates access to the file.
