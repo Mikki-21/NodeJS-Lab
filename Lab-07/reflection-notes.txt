@@ -1,0 +1,7 @@
+1. How EventEmitter connects to the Observer Pattern:
+The Observer Pattern defines a subscription mechanism where an object (the subject) maintains a list of dependents (observers) and notifies them automatically of any state changes. Node.js's EventEmitter is a direct implementation of this pattern. In EventEmitter, the emitter instance acts as the subject, while the callback functions registered via `.on()` or `.once()` act as the observers. When an event is dispatched using `.emit()`, the subject iterates through its internal registry of observer functions and executes each one synchronously, cleanly decoupling the code that produces an action from the code that responds to it.
+
+2. Core Node.js API built on EventEmitter:
+A prominent core Node.js API built directly on EventEmitter is the Stream module (such as fs.createReadStream or HTTP request/response objects). We know this because Streams inherit directly from EventEmitter and rely on standard event listeners like `.on('data', ...)`, `.on('end', ...)`, and `.on('error', ...)`. Instead of blocking execution while reading large data chunks from disk or network interfaces, streams emit chunks incrementally as 'data' events and trigger 'end' once reading completes, following the exact same event-driven architecture.
+
+Why: In Node.js, EventEmitter handles events synchronously. Listeners must be registered with .on() before the event is emitted via .emit(). If an event fires before a listener is attached, it triggers into an empty listener array and is lost immediately.
