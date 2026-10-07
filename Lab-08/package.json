@@ -1,0 +1,12 @@
+{
+  "name": "lab-08-integrated-server",
+  "version": "1.0.0",
+  "description": "Integrated Node.js Labs 01-07 portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "slugify": "^1.6.9"
+  }
+}
